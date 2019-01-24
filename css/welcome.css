@@ -5,6 +5,10 @@
   -moz-box-sizing: border-box;
 }
 
+.body-main{
+  height: auto;
+}
+
 h1{
   width: 485px;
   height: 90px;
@@ -19,8 +23,7 @@ h1{
 footer {
 
   width: 100%;
-  text-align: center;
-  font-family: Raleway;
+  height: 20%
   color: #fff;
   background-color: #000000;
 }
@@ -37,7 +40,7 @@ footer {
 
 .footer-container h2 {
   font-family: Open Sans;
-  font-size: 90px;
+  font-size: 80px;
   line-height: 87px;
   color: #333333;
 }
@@ -70,4 +73,12 @@ footer {
 .footer-main .footer-columna:nth-child(3) {
   padding: 0 0;
   font-size: 15px;
+}
+
+.barra_derechoAutor {
+  text-align: center;
+  font-size: 12px;
+  font-family: Raleway;
+  color: #fff;
+
 }
