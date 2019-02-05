@@ -111,6 +111,26 @@ li.slider {
 
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
 
+.cuadroContenido{
+
+  width: 100%;
+  height: 60%;
+  color: #fff;
+  background-color: #f2f;
+  font-family: Raleway;
+  font-size: 20px;
+  text-align: justify-all;
+}
+
+.cuadroContenido{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+
+
 
 .sidebar {
   width: 240px;
