@@ -119,24 +119,37 @@ li.slider {
   background-color: #f2f;
   font-family: Raleway;
   font-size: 20px;
-  text-align: justify-all;
+  align-items: center;
 }
 
 .cuadroContenido{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-content: center;
 
 }
 
+.cuadroContenido .contenido-columna{
+  width: 100%;
+}
 
+.cuadroContenido .contenido-columna:nth-child(1){
+  width: 13%;
+}
+
+
+.cuadroContenido .contenido-columna:nth-child(2){
+  width: 87%;
+  padding-left: 5px;
+}
 
 
 .sidebar {
   width: 240px;
   height: 100%;
   background: #293949;
-  position: absolute;
+  
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
