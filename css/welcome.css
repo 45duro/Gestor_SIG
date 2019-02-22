@@ -176,7 +176,7 @@ li.slider {
   --colorMenuLateral: #293949;
 
   display: block;
-  border-top: 1px solid #2980b9;
+  border-top: 1px solid rgba(255,255,255,.05);
   overflow: hidden;
   font-size: var(--fuenteMenulateral);
   
@@ -218,7 +218,7 @@ li.slider {
 }
 
 .cuadroContenido .contenido-columna .smenu{
-  background: #333;
+  
   overflow: hidden;
   transition: max-height 0.3s;
   max-height: 0;
