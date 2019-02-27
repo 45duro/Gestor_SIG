@@ -17,5 +17,8 @@ $(()=>{
 	  })
 
 
+	//#Inicializa la nube de Firestore
+
+
 
 })
