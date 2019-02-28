@@ -35,9 +35,66 @@
 <body>
 
 	<div class="container">
-        <h1>Cargar Documento</h1>   
-    </div>
+        <div><h1>Cargar Documento</h1></div>
+        <div class="container"> 
+
+          <div class="ContenidoColumna">
+            <div class="conjuntoInput">
+              <h5>Titulo del archivo:</h5>
+              <input type="text" id="txt_nombreArchivo" placeholder="Nombre del archivo" class="form-control">
+            </div>
+
+            <div class="conjuntoInput">
+              <h5>Codigo:</h5>
+              <input type="text" id="txt_nombreArchivo" placeholder="Ej: SST-SIG 0001-23" class="form-control">
+            </div>
+            <div class="conjuntoInput">
+              <h5>Ministerio:</h5>
+              <input type="text" id="txt_nombreArchivo" placeholder="Ej: TIC, Audiovisuales" class="form-control">
+            </div>
+            <div class="conjuntoInput">
+              <h5>Descripcion:</h5>
+              <input type="text" id="txt_nombreArchivo" placeholder="Describa las caracteristicas del documento y su función" class="form-control">
+            </div>           
+          </div>
+          <div class="ContenidoColumna">
+            <div class="conjuntoInput">
+              <h5>Version:</h5>
+              <input type="text" id="txt_nombreArchivo" placeholder="Ej: 1.1" class="form-control">
+            </div>
+            <div class="conjuntoInput">
+              <h5>Archivo:</h5>
+              <input type="file" id="btn_Archivo" value="Upload">
+              <progress value="0" max="100" id="bar_Cargador"> 0% </progress>
+            </div>
+          </div>
+
+
+        </div>
+  </div>
 
 
 </body>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+
+
+
+<script type="text/javascript" src="../../js/config/ConfigFirebase.js"></script>
+<script type="text/javascript" src="../../js/auth/autenticacion.js"></script>
+<script type="text/javascript" src="../../js/auth/autenticacionControler.js"></script>
+
+
+<script type="text/javascript" src="../../js/general.js"></script>
+<script type="text/javascript" src="../../js/up_files/upfilesController.js"></script>
+
+
+
 </html>
