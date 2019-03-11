@@ -37,30 +37,29 @@
 	<div class="container">
         <div><h1>Cargar Documento</h1></div>
         <div class="container"> 
-
           <div class="ContenidoColumna">
             <div class="conjuntoInput">
               <h5>Titulo del archivo:</h5>
-              <input type="text" id="txt_nombreArchivo" placeholder="Nombre del archivo" class="form-control">
+              <input type="text" id="txt_nombreArchivo" placeholder="Nombre del archivo" class="form-control" required="true">
             </div>
 
             <div class="conjuntoInput">
               <h5>Codigo:</h5>
-              <input type="text" id="txt_nombreArchivo" placeholder="Ej: SST-SIG 0001-23" class="form-control">
+              <input type="text" id="txt_codigoArchivo" placeholder="Ej: SST-SIG 0001-23" class="form-control" required="true">
             </div>
             <div class="conjuntoInput">
               <h5>Ministerio:</h5>
-              <input type="text" id="txt_nombreArchivo" placeholder="Ej: TIC, Audiovisuales" class="form-control">
+              <input type="text" id="txt_areaArchivo" placeholder="Ej: TIC, Audiovisuales" class="form-control" required="true">
             </div>
             <div class="conjuntoInput">
               <h5>Descripcion:</h5>
-              <input type="text" id="txt_nombreArchivo" placeholder="Describa las caracteristicas del documento y su función" class="form-control">
+              <input type="text" id="txt_descripcion" placeholder="Describa las caracteristicas del documento y su función" class="form-control" required="true">
             </div>           
           </div>
           <div class="ContenidoColumna">
             <div class="conjuntoInput">
               <h5>Version:</h5>
-              <input type="text" id="txt_nombreArchivo" placeholder="Ej: 1.1" class="form-control">
+              <input type="text" id="txt_Version" placeholder="Ej: 1.1" class="form-control">
             </div>
             <div class="conjuntoInput">
               <h5>Archivo:</h5>
@@ -68,6 +67,12 @@
               <progress value="0" max="100" id="bar_Cargador"> 0% </progress>
             </div>
           </div>
+          <div class="ContenidoColumna">
+              <div class="conjuntoInput">
+                <button class="btn btn-info" id="boton" my-5 onclick="guardar()">Subir</button>
+              </div>
+            </div>
+
 
 
         </div>
@@ -81,26 +86,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-functions.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-storage.js"></script>
 
-
-
+<!--Archivos de Conextion a la app-->
 <script type="text/javascript" src="../../js/config/ConfigFirebase.js"></script>
-
-
-<!--
-<script type="text/javascript" src="../../js/auth/autenticacion.js"></script>
-<script type="text/javascript" src="../../js/auth/autenticacionControler.js"></script>
-
-
 <script type="text/javascript" src="../../js/general.js"></script>
--->
 <script type="text/javascript" src="../../js/up_files/upfilesController.js"></script>
 
 
