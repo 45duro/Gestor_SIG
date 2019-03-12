@@ -30,13 +30,26 @@ function guardar(){
 	})
 }
 
-var cargador = document.getElementById('bar_Cargador');
-var fileButton = document.getElementById('btn_Archivo');
-// Get a reference to the storage service, which is used to create references in your storage bucket
-var storage = iniciarApp.storage();
+
+function inicializar(){
+
+	var cargador = document.getElementById('bar_Cargador');
+	var fichero = document.getElementById('fichero');
+	// Get a reference to the storage service, which is used to create references in your storage bucket
+	fichero.addEventListener('change', subirElArchivo(), false);
+
+	storageRef = firebase.storage().ref();
+}
 
 
-fileButton.addEventListener('change', '', false)
+
+
+
+function subirElArchivo(){
+
+	console.log("Subir archivo");
+
+}
 // function guardar(){
 // 	console.log(email)
 // 	let archivo = document.getElementById('txt_nombreArchivo').value;
