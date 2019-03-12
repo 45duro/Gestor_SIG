@@ -62,18 +62,21 @@
               <input type="text" id="txt_Version" placeholder="Ej: 1.1" class="form-control">
             </div>
             <div class="conjuntoInput">
-              <h5>Archivo:</h5>
-              <input type="file" id="btn_Archivo" value="Upload">
-              <progress value="0" max="100" id="bar_Cargador"> 0% </progress>
+              <form id="form-imagenes">
+                <label class="btn btn-file">
+                  
+                  <input type="file" name="btn_Archivo" id="btn_Archivo" value="" class="hidden">
+                  <!--<h5>Archivo:</h5>-->
+                  <!--<progress value="0" max="100" id="bar_Cargador"> 0% </progress>-->
+                  <!-- <button class="btn btn-info" id="boton" my-5 onclick="guardar()">Subir</button> -->
+                
+                </label>
+                
+
+              </form>
+              
             </div>
           </div>
-          <div class="ContenidoColumna">
-              <div class="conjuntoInput">
-                <button class="btn btn-info" id="boton" my-5 onclick="guardar()">Subir</button>
-              </div>
-            </div>
-
-
 
         </div>
   </div>
