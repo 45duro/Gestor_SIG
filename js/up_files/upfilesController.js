@@ -1,5 +1,32 @@
+// window.onload = inicializar;
 
 var bd = firebase.firestore();
+var cargador = document.getElementById('bar_Cargador');
+var fichero = document.getElementById('fichero');
+var ruta;
+var file;
+
+fichero.addEventListener('change', function(e){
+	
+	//Obtener Archivo
+	file = e.target.files[0];
+	console.log(file);
+	ruta = 'archivos/';
+
+	
+	//Actualizar barra de progreso
+
+	// task.on('state_changed',
+
+	// 	function progress(snapshot){
+	// 		var porcentage = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
+	// 		cargador.value = porcentage
+
+	// 	}
+	// )
+
+	
+}, false );
 
 
 function guardar(){
@@ -9,10 +36,10 @@ function guardar(){
 	let areaArchivo = document.getElementById('txt_areaArchivo').value;
 	let descripcion = document.getElementById('txt_descripcion').value;
 	let version = document.getElementById('txt_Version').value;
-	let ruta = "Documentos";
+	let rutaBD = "Documentos";
 
 	//Subir A la Base De Datos
-	bd.collection(ruta).add({
+	bd.collection(rutaBD).add({
 		Nombre: archivo,
 		Codigo: codigoArchivo,
 		Ministerio: areaArchivo,
@@ -24,6 +51,20 @@ function guardar(){
 	})
 	.then(function(docRef){
 		console.log("Documento escrito con: ", docRef.id);
+		//crear un storageRef
+		var storageRef = firebase.storage().ref(ruta + codigoArchivo + " " + archivo);
+
+		//subir Archivo
+		var task = storageRef.put(file);
+
+		task.on('state_changed',
+	
+			function progress(snapshot){
+				var porcentage = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
+				cargador.value = porcentage
+	
+			}
+		)
 	})
 	.catch(err=>{
 		console.error("Error añadiendo el archivo", err)
@@ -31,25 +72,7 @@ function guardar(){
 }
 
 
-function inicializar(){
 
-	var cargador = document.getElementById('bar_Cargador');
-	var fichero = document.getElementById('fichero');
-	// Get a reference to the storage service, which is used to create references in your storage bucket
-	fichero.addEventListener('change', subirElArchivo(), false);
-
-	storageRef = firebase.storage().ref();
-}
-
-
-
-
-
-function subirElArchivo(){
-
-	console.log("Subir archivo");
-
-}
 // function guardar(){
 // 	console.log(email)
 // 	let archivo = document.getElementById('txt_nombreArchivo').value;
