@@ -5,6 +5,8 @@ var cargador = document.getElementById('bar_Cargador');
 var fichero = document.getElementById('fichero');
 var ruta;
 var file;
+$('#toas_Correcto').toast({ delay: 3000 });
+$('#toas_inCorrecto').toast({ delay: 3000 });
 
 fichero.addEventListener('change', function(e){
 	
@@ -21,62 +23,67 @@ var storage = firebase.storage();
 var dbAlamcenamiento = iniciarApp.storage();
 
 function guardar(){
+	
+	
+	console.log(email);
+	let archivo = document.getElementById('txt_nombreArchivo').value;
+	let codigoArchivo = document.getElementById('txt_codigoArchivo').value;
+	let areaArchivo = document.getElementById('txt_areaArchivo').value;
+	let descripcion = document.getElementById('txt_descripcion').value;
+	let version = document.getElementById('txt_Version').value;
+	let rutaBD = "Documentos";
 
-	$('.toast').toast(data-animation="500");
-	// console.log(email);
-	// let archivo = document.getElementById('txt_nombreArchivo').value;
-	// let codigoArchivo = document.getElementById('txt_codigoArchivo').value;
-	// let areaArchivo = document.getElementById('txt_areaArchivo').value;
-	// let descripcion = document.getElementById('txt_descripcion').value;
-	// let version = document.getElementById('txt_Version').value;
-	// let rutaBD = "Documentos";
-
-	// //Subir A la Base De Datos
-	// bd.collection(rutaBD).add({
-	// 	Nombre: archivo,
-	// 	Codigo: codigoArchivo,
-	// 	Ministerio: areaArchivo,
-	// 	Descripcion: descripcion,
-	// 	Version: version,
-	// 	Propiedad: displayName
-	// 	//Obtencion de los elementos
+	//Subir A la Base De Datos
+	bd.collection(rutaBD).add({
+		Nombre: archivo,
+		Codigo: codigoArchivo,
+		Ministerio: areaArchivo,
+		Descripcion: descripcion,
+		Version: version,
+		Propiedad: displayName
+		//Obtencion de los elementos
 		
-	// })
-	// .then(function(docRef){
-	// 	console.log("Documento escrito con: ", docRef.id);
-	// 	//crear un storageRef
-	// 	var storageRef = firebase.storage().ref(ruta + codigoArchivo + " " + archivo);
+	})
+	.then(function(docRef){
+		
+		// // console.log("Documento escrito con: ", docRef.id);
+		//crear un storageRef
+		var storageRef = firebase.storage().ref(ruta + codigoArchivo + " " + archivo);
 
-	// 	//subir Archivo
-	// 	var task = storageRef.put(file);
+		//subir Archivo
+		var task = storageRef.put(file);
 
-	// 	task.on('state_changed',
+		task.on('state_changed',
 	
-	// 		function progress(snapshot){
-	// 			var porcentage = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
-	// 			cargador.value = porcentage;
+			function progress(snapshot){
+				var porcentage = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
+				cargador.value = porcentage;
 
-	// 			if(porcentage == 100){
+				if(porcentage == 100){
 
-	// 				document.getElementById('txt_nombreArchivo').value = '';
-	// 				document.getElementById('txt_codigoArchivo').value = '';
-	// 				document.getElementById('txt_areaArchivo').value = '';
-	// 				document.getElementById('txt_descripcion').value = '';
-	// 				document.getElementById('txt_Version').value = '';
+					document.getElementById('txt_nombreArchivo').value = '';
+					document.getElementById('txt_codigoArchivo').value = '';
+					document.getElementById('txt_areaArchivo').value = '';
+					document.getElementById('txt_descripcion').value = '';
+					document.getElementById('txt_Version').value = '';
+					document.getElementById('fichero').value = '';
 
-	// 				console.log("ArchivO UBIDO CORRECTAMENTE");
+					console.log("Archivo subido correctamente");
 					
+					$('#toas_Correcto').toast('show');
 
-	// 			}
+				}
 
 
 	
-	// 		}
-	// 	)
-	// })
-	// .catch(err=>{
-	// 	console.error("Error añadiendo el archivo", err)
-	// })
+			}
+		)
+	})
+	.catch(err=>{
+		$('#toas_inCorrecto').toast('show');
+		//console.error("Error añadiendo el archivo: ", err.name)
+		
+	})
 }
 
 
