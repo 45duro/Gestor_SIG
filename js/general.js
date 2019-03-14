@@ -1,3 +1,4 @@
+
 var displayName = "";
 var email = "";
 var emailVerified = "";
@@ -17,7 +18,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 		isAnonymous = user.isAnonymous;
 		uid = user.uid;
 		providerData = user.providerData;
-		
+		console.log("verificdo")
 		// ...
 	} else {
 		console.log("Usuario no conocido")

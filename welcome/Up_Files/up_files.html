@@ -10,12 +10,10 @@
     <!-- favicon -->
     <link rel="icon" type="image/png" href="../../img/favicon.ico">
 
+    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Compiled and minified CSS -->
- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+  
     
     <!--Aqui esta el estilo para los iconos del acordeon menu-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
@@ -62,23 +60,34 @@
               <input type="text" id="txt_Version" placeholder="Ej: 1.1" class="form-control">
             </div>
             <div class="conjuntoInput">
-              <form id="form-imagenes">
-                <label class="btn btn-file">
-                  
-                  <!--<img src="../../img/uploadImg.svg" class="img-responsive">-->
-                  <input type="file" name="btn_Archivo" id="btn_Archivo" value="" class="hidden">
-                  <!--<h5>Archivo:</h5>-->
-                  <progress value="0" max="100" id="bar_Cargador"> 0% </progress>
-                  <button class="btn btn-info" id="boton" my-5 onclick="guardar()">Subir</button>
-                
-                </label>
-                
-  
-              </form>
-              
+              <h5>Archivo:</h5>
+              <input type="file" id="fichero" value="Upload">
+              <progress value="0" max="100" id="bar_Cargador"> 0% </progress>
             </div>
           </div>
+          <div class="ContenidoColumna">
+              <div class="conjuntoInput">
+                <button class="btn btn-info" id="boton" onclick="guardar()" >Subir</button>
+              </div>
+          </div>
+          
 
+
+
+
+        </div>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="../../img/Logogris.png" class="rounded mr-2" alt="...">
+            <strong class="mr-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            Hello, world! This is a toast message.
+          </div>
         </div>
   </div>
 
@@ -86,9 +95,8 @@
 </body>
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
